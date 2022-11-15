@@ -1,7 +1,7 @@
 {
-  "name": "ai-cli",
+  "name": "@abhagsain/ai-cli",
   "version": "0.0.0",
-  "description": "oclif example Hello World CLI",
+  "description": "Get answers from GPT3 right from your terminal",
   "author": "Anurag Bhagsain @abhagsain",
   "bin": {
     "ai": "./bin/run"
@@ -22,6 +22,7 @@
     "@oclif/plugin-plugins": "^2.1.6",
     "chalk": "^4.1.2",
     "clipboardy": "^3.0.0",
+    "fs-extra": "^10.1.0",
     "inquirer": "^8.2.2",
     "openai": "^3.1.0"
   },
@@ -29,6 +30,7 @@
     "@oclif/test": "^2.2.8",
     "@types/chai": "^4",
     "@types/clipboardy": "^2.0.1",
+    "@types/fs-extra": "^9.0.13",
     "@types/inquirer": "^8.2.1",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.18.3",
