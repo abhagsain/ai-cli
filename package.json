@@ -19,7 +19,6 @@
   "dependencies": {
     "@oclif/core": "^1.19.1",
     "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^2.1.6",
     "chalk": "^4.1.2",
     "clipboardy": "^3.0.0",
     "fs-extra": "^10.1.0",
@@ -53,8 +52,7 @@
     "dirname": "ai",
     "commands": "./dist/commands",
     "plugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-plugins"
+      "@oclif/plugin-help"
     ],
     "topicSeparator": " ",
     "topics": {

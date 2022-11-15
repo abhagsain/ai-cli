@@ -5,7 +5,7 @@ import { getDefaultCommandPrompt, getOpenAIKey } from "../helpers/index";
 const { Configuration, OpenAIApi } = require("openai");
 
 export default class AI extends Command {
-  static description = "Get answers from GPT3 right from your terminal";
+  static description = "Ask question to GPT3 from your terminal";
   static usage = "ask [question]";
   static help = `ai ask "Check if a remote port is open"`;
 
