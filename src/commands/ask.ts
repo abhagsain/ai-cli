@@ -78,7 +78,6 @@ export default class AI extends Command {
 
   async run(): Promise<void> {
     const API_KEY = await getOpenAIKey(this.config.configDir);
-    console.log(this.config.name);
     if (!API_KEY) {
       this.log(
         "You haven't set your OpenAI API key. Please login with",
