@@ -20,7 +20,7 @@ $ npm install -g ai-cli
 $ ai COMMAND
 running command...
 $ ai (--version)
-ai-cli/0.0.0 darwin-x64 node-v14.18.3
+ai-cli/1.0.0 darwin-x64 node-v14.18.3
 $ ai --help [COMMAND]
 USAGE
   $ ai COMMAND
@@ -64,7 +64,7 @@ EXAMPLES
   hello friend from oclif! (./src/commands/hello/index.ts)
 ```
 
-_See code: [dist/commands/hello/index.ts](https://github.com/abhagsain/ai-cli/blob/v0.0.0/dist/commands/hello/index.ts)_
+_See code: [dist/commands/hello/index.ts](https://github.com/abhagsain/ai-cli/blob/v1.0.0/dist/commands/hello/index.ts)_
 
 ## `ai hello world`
 
