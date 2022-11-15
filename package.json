@@ -1,6 +1,6 @@
 {
   "name": "@abhagsain/ai-cli",
-  "version": "0.0.0",
+  "version": "0.0.1-0",
   "description": "Get answers from GPT3 right from your terminal",
   "author": "Anurag Bhagsain @abhagsain",
   "bin": {
