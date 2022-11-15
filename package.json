@@ -7,7 +7,7 @@
     "ai": "./bin/run"
   },
   "homepage": "https://github.com/abhagsain/ai-cli",
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "main": "dist/index.js",
   "repository": "abhagsain/ai-cli",
   "files": [
@@ -25,6 +25,9 @@
     "fs-extra": "^10.1.0",
     "inquirer": "^8.2.2",
     "openai": "^3.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@oclif/test": "^2.2.8",
@@ -66,7 +69,8 @@
     "postpack": "shx rm -f oclif.manifest.json",
     "posttest": "yarn lint",
     "prepack": "yarn build && oclif manifest && oclif readme",
-    "version": "oclif readme && git add README.md"
+    "version": "oclif readme && git add README.md",
+    "test": "echo \"No test specified\""
   },
   "engines": {
     "node": ">=12.0.0"
