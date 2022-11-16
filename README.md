@@ -65,14 +65,14 @@ _See code: [dist/commands/ask.ts](https://github.com/abhagsain/ai-cli/blob/v1.0.
 
 ## `ai auth`
 
-Add existing or new OpenAI API Key
+Update existing or add new OpenAI API Key
 
 ```
 USAGE
   $ ai auth
 
 DESCRIPTION
-  Add existing or new OpenAI API Key
+  Update existing or add new OpenAI API Key
 
 EXAMPLES
   $ ai auth (Follow the prompt)
