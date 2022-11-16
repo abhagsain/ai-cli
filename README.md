@@ -28,37 +28,33 @@ Here's how you can get one
 Auto generated documentation
 
 <!-- toc -->
-
-- [GPT3 Powered CLI](#gpt3-powered-cli)
-- [Usage](#usage)
-- [Commands](#commands)
+* [GPT3 Powered CLI](#gpt3-powered-cli)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @abhagsain/ai-cli
 $ ai COMMAND
 running command...
 $ ai (--version)
-@abhagsain/ai-cli/1.0.1-0 darwin-x64 node-v14.18.3
+@abhagsain/ai-cli/1.1.0 darwin-x64 node-v14.18.3
 $ ai --help [COMMAND]
 USAGE
   $ ai COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`ai ask [question]`](#ai-ask-question)
-- [`ai auth`](#ai-auth)
-- [`ai help [COMMAND]`](#ai-help-command)
+* [`ai ask [question]`](#ai-ask-question)
+* [`ai auth`](#ai-auth)
+* [`ai help [COMMAND]`](#ai-help-command)
 
 ## `ai ask [question]`
 
@@ -78,7 +74,7 @@ EXAMPLES
   $ ai ask "Check running process on port 3000"
 ```
 
-_See code: [dist/commands/ask.ts](https://github.com/abhagsain/ai-cli/blob/v1.0.1-0/dist/commands/ask.ts)_
+_See code: [dist/commands/ask.ts](https://github.com/abhagsain/ai-cli/blob/v1.1.0/dist/commands/ask.ts)_
 
 ## `ai auth`
 
@@ -95,7 +91,7 @@ EXAMPLES
   $ ai auth (Follow the prompt)
 ```
 
-_See code: [dist/commands/auth.ts](https://github.com/abhagsain/ai-cli/blob/v1.0.1-0/dist/commands/auth.ts)_
+_See code: [dist/commands/auth.ts](https://github.com/abhagsain/ai-cli/blob/v1.1.0/dist/commands/auth.ts)_
 
 ## `ai help [COMMAND]`
 
@@ -116,5 +112,4 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.17/src/commands/help.ts)_
-
 <!-- commandsstop -->
