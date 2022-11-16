@@ -2,7 +2,7 @@
 
 Get answers for CLI commands from GPT3 right from your terminal
 
-![ai-cli-demo](https://user-images.githubusercontent.com/36589645/202102237-6666f461-1aa8-496a-9438-de15cee1696e.gif)
+![image](https://user-images.githubusercontent.com/36589645/202110031-859683ad-e71a-44a0-9676-b4a7d72d3cf6.png)
 <!-- <img src="https://user-images.githubusercontent.com/36589645/202102237-6666f461-1aa8-496a-9438-de15cee1696e.gif" width="900" height="600"/> -->
 
 
