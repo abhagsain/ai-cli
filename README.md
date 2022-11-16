@@ -1,10 +1,18 @@
 # GPT3 Powered CLI
 
-Get answers from GPT3 right inside your terminal.
+Get answers for CLI commands from GPT3 right from your terminal
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/@abhagsain/ai-cli.svg)](https://npmjs.org/package/@abhagsain/ai-cli)
 [![Downloads/week](https://img.shields.io/npm/dw/@abhagsain/ai-cli.svg)](https://npmjs.org/package/@abhagsain/ai-cli)
+
+Usage 
+```
+$ ai ask "Check process running on port"
+```
+
+
+Auto generated documentation
 
 <!-- toc -->
 * [GPT3 Powered CLI](#gpt3-powered-cli)
@@ -150,3 +158,4 @@ FLAGS
 DESCRIPTION
   Display help for ai.
 ```
+<!-- commandsstop -->

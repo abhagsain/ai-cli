@@ -1,7 +1,7 @@
 {
   "name": "@abhagsain/ai-cli",
   "version": "0.0.1-2",
-  "description": "Get answers from GPT3 right from your terminal",
+  "description": "Get answers for CLI commands from GPT3 right from your terminal",
   "author": "Anurag Bhagsain @abhagsain",
   "bin": {
     "ai": "./bin/run"
@@ -75,7 +75,12 @@
   },
   "bugs": "https://github.com/abhagsain/ai-cli/issues",
   "keywords": [
-    "oclif"
+    "oclif",
+    "gpt3",
+    "ai-cli",
+    "ai",
+    "cli",
+    "@abhagsain/ai-cli"
   ],
   "types": "dist/index.d.ts"
 }

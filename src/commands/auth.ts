@@ -5,7 +5,7 @@ import inquirer from "inquirer";
 import { getConfigFilePath, getOpenAIKey } from "../helpers/index";
 
 export default class Auth extends Command {
-  static description = "Add existing or new OpenAI API Key";
+  static description = "Update existing or add new OpenAI API Key";
 
   static examples = ["<%= config.bin %> <%= command.id %> (Follow the prompt)"];
 
