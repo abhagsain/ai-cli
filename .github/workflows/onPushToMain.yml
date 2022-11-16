@@ -3,7 +3,7 @@ name: version, tag and github release
 
 on:
   push:
-    branches: [main]
+    branches: [release] # Not triggering CI at the moment
 
 jobs:
   release:

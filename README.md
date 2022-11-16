@@ -2,27 +2,42 @@
 
 Get answers for CLI commands from GPT3 right from your terminal
 
+<!-- ![ai-cli-demo](https://user-images.githubusercontent.com/36589645/202102237-6666f461-1aa8-496a-9438-de15cee1696e.gif) -->
+<img src="https://user-images.githubusercontent.com/36589645/202102237-6666f461-1aa8-496a-9438-de15cee1696e.gif" width="900" height="600"/>
+
+
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/@abhagsain/ai-cli.svg)](https://npmjs.org/package/@abhagsain/ai-cli)
 [![Downloads/week](https://img.shields.io/npm/dw/@abhagsain/ai-cli.svg)](https://npmjs.org/package/@abhagsain/ai-cli)
 
-Usage 
+Usage
+
 ```
 $ ai ask "Check process running on port"
 ```
 
+You'd need to enter your own OpenAI API key
+Here's how you can get one
+
+1. Go to https://openai.com/api/login
+2. Create an account or log into your existing account
+3. Go to https://beta.openai.com/account/api-keys or
+   <img width="1904" alt="image" src="https://user-images.githubusercontent.com/36589645/202097820-dc6905e6-4514-413b-980f-169c35ffef9a.png">
+4. Run `ai auth`, enter your API KEY and you're good to go!
 
 Auto generated documentation
 
 <!-- toc -->
-* [GPT3 Powered CLI](#gpt3-powered-cli)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [GPT3 Powered CLI](#gpt3-powered-cli)
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @abhagsain/ai-cli
 $ ai COMMAND
@@ -34,14 +49,16 @@ USAGE
   $ ai COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`ai ask [question]`](#ai-ask-question)
-* [`ai auth`](#ai-auth)
-* [`ai help [COMMAND]`](#ai-help-command)
+
+- [`ai ask [question]`](#ai-ask-question)
+- [`ai auth`](#ai-auth)
+- [`ai help [COMMAND]`](#ai-help-command)
 
 ## `ai ask [question]`
 
@@ -99,4 +116,5 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.17/src/commands/help.ts)_
+
 <!-- commandsstop -->

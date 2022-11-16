@@ -1,8 +1,6 @@
 name: automerge
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '17 2,5,8,11 * * *'
 
 jobs:
   automerge:

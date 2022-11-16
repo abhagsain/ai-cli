@@ -4,7 +4,6 @@ import path from "path";
 export const getOpenAIKey = async (
   configDir: string
 ): Promise<string | null> => {
-  // read the API key from this.config.configDir/.ai-cli
   const filePath = getConfigFilePath(configDir);
   if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
     const fileContent = await fs.readFile(filePath, "utf-8");
