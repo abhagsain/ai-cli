@@ -2,8 +2,8 @@
 
 Get answers for CLI commands from GPT3 right from your terminal
 
-![image](https://user-images.githubusercontent.com/36589645/202110031-859683ad-e71a-44a0-9676-b4a7d72d3cf6.png)
 <!-- <img src="https://user-images.githubusercontent.com/36589645/202102237-6666f461-1aa8-496a-9438-de15cee1696e.gif" width="900" height="600"/> -->
+![image](https://user-images.githubusercontent.com/36589645/202654014-c1884be3-76d5-4b64-81d1-e3f1169fcb46.png)
 
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
