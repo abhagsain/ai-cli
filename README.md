@@ -10,6 +10,14 @@ Get answers for CLI commands from GPT3 right from your terminal
 [![Version](https://img.shields.io/npm/v/@abhagsain/ai-cli.svg)](https://npmjs.org/package/@abhagsain/ai-cli)
 [![Downloads/week](https://img.shields.io/npm/dw/@abhagsain/ai-cli.svg)](https://npmjs.org/package/@abhagsain/ai-cli)
 
+### Installation
+
+You'd need to install it globally
+
+```
+npm i @abhagsain/ai-cli -g
+```
+
 Usage
 
 ```
