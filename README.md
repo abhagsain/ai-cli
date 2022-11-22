@@ -33,6 +33,11 @@ Here's how you can get one
    <img width="1904" alt="image" src="https://user-images.githubusercontent.com/36589645/202097820-dc6905e6-4514-413b-980f-169c35ffef9a.png">
 4. Run `ai auth`, enter your API KEY and you're good to go!
 
+Pricing
+
+The current prompt length is `~840` tokens and the pricing for [`text-davinci-002`](https://openai.com/api/pricing/) is `$0.02` for `1K` tokens which is ~`$0.017/command`. We'll see if we can improve the response as well as reduce the per-command-cost with fine-tuning.
+
+
 Auto generated documentation
 
 <!-- toc -->
