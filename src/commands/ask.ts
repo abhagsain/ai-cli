@@ -37,7 +37,7 @@ export default class AI extends Command {
     });
     const openai = new OpenAIApi(configuration);
     const prompt = `${getDefaultCommandPrompt() + question.trim() + "\nA - "}`;
-    const model = getCurrentModel(this.config.configDir);
+    const { name: model } = getCurrentModel(this.config.configDir);
     const response = await openai.createCompletion({
       model,
       prompt,

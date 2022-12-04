@@ -1,16 +1,17 @@
-import chalk from "chalk";
 import fs from "fs-extra";
 import path from "path";
 
 export const defaultModel = "text-davinci-003";
 
 export const models = [
-  defaultModel,
-  "text-curie-001",
-  "text-ada-001",
-  "text-babbage-001",
-  "code-davinci-002" + chalk.dim(" (limited beta)"),
-  "code-cushman-001" + chalk.dim(" (limited beta)"),
+  {
+    name: defaultModel,
+  },
+  { name: "text-curie-001" },
+  { name: "text-ada-001" },
+  { name: "text-babbage-001" },
+  { name: "code-davinci-002", isLimitedBeta: true },
+  { name: "code-cushman-001", isLimitedBeta: true },
 ];
 
 export const getOpenAIKey = async (
@@ -33,7 +34,7 @@ export const getAPIConfigFilePath = (configDir: string): string =>
 const getDataConfigFilePath = (dataDir: string): string =>
   path.join(dataDir, "config.json");
 
-export const getCurrentModel = (dataDir: string): string => {
+export const getCurrentModel = (dataDir: string): typeof models[number] => {
   const config = getDataConfigFilePath(dataDir);
   const exists = fs.existsSync(config);
   if (!exists) {

@@ -20,13 +20,18 @@ export default class Model extends Command {
         name: "modelName",
         message: "Please select a model",
         type: "list",
-        choices: models.map((model) => ({
-          name:
-            model === currentModel
-              ? model + chalk.yellowBright(" (current)")
-              : model,
-          value: model,
-        })),
+        choices: models.map((model) => {
+          const name =
+            model.name === currentModel.name
+              ? model.name + chalk.yellowBright(" (current)")
+              : model.name;
+          return {
+            name: model.isLimitedBeta
+              ? name + chalk.dim(" (limited beta)")
+              : name,
+            value: model,
+          };
+        }),
       },
     ]);
     const { modelName } = prompt;
