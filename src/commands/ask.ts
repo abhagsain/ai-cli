@@ -1,7 +1,11 @@
 import { CliUx, Command } from "@oclif/core";
 import chalk from "chalk";
 import * as inquirer from "inquirer";
-import { getDefaultCommandPrompt, getOpenAIKey } from "../helpers/index";
+import {
+  getCurrentModel,
+  getDefaultCommandPrompt,
+  getOpenAIKey,
+} from "../helpers/index";
 const { Configuration, OpenAIApi } = require("openai");
 
 export default class AI extends Command {
@@ -33,7 +37,7 @@ export default class AI extends Command {
     });
     const openai = new OpenAIApi(configuration);
     const prompt = `${getDefaultCommandPrompt() + question.trim() + "\nA - "}`;
-    const model = "text-davinci-002";
+    const model = getCurrentModel(this.config.configDir);
     const response = await openai.createCompletion({
       model,
       prompt,

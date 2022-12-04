@@ -2,7 +2,7 @@ import { Command } from "@oclif/core";
 import chalk from "chalk";
 import fs from "fs-extra";
 import inquirer from "inquirer";
-import { getConfigFilePath, getOpenAIKey } from "../helpers/index";
+import { getAPIConfigFilePath, getOpenAIKey } from "../helpers/index";
 
 export default class Auth extends Command {
   static description = "Update existing or add new OpenAI API Key";
@@ -11,7 +11,7 @@ export default class Auth extends Command {
 
   public async run(): Promise<void> {
     const existingAPIKey = await getOpenAIKey(this.config.configDir);
-    const filePath = getConfigFilePath(this.config.configDir);
+    const filePath = getAPIConfigFilePath(this.config.configDir);
 
     const message = existingAPIKey
       ? "Please enter your OpenAI API Key (This would overwrite the existing key)"

@@ -1,10 +1,22 @@
+import chalk from "chalk";
 import fs from "fs-extra";
 import path from "path";
+
+export const defaultModel = "text-davinci-003";
+
+export const models = [
+  defaultModel,
+  "text-curie-001",
+  "text-ada-001",
+  "text-babbage-001",
+  "code-davinci-002" + chalk.dim(" (limited beta)"),
+  "code-cushman-001" + chalk.dim(" (limited beta)"),
+];
 
 export const getOpenAIKey = async (
   configDir: string
 ): Promise<string | null> => {
-  const filePath = getConfigFilePath(configDir);
+  const filePath = getAPIConfigFilePath(configDir);
   if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
     const fileContent = await fs.readFile(filePath, "utf-8");
     const [name, value] = fileContent?.split("=") || [];
@@ -15,8 +27,26 @@ export const getOpenAIKey = async (
   return null;
 };
 
-export const getConfigFilePath = (configDir: string): string =>
+export const getAPIConfigFilePath = (configDir: string): string =>
   path.join(configDir, ".ai-cli");
+
+const getDataConfigFilePath = (dataDir: string): string =>
+  path.join(dataDir, "config.json");
+
+export const getCurrentModel = (dataDir: string): string => {
+  const config = getDataConfigFilePath(dataDir);
+  const exists = fs.existsSync(config);
+  if (!exists) {
+    saveModelPreference(dataDir, defaultModel);
+  }
+  const { model } = fs.readJsonSync(config);
+  return model;
+};
+
+export const saveModelPreference = (dataDir: string, model: string): void => {
+  const config = getDataConfigFilePath(dataDir);
+  fs.writeJsonSync(config, { model });
+};
 
 // Directly from - https://github.com/abhagsain/ai-cli/issues/9#issuecomment-1324016570
 const getPowerShellPrompt = () =>
