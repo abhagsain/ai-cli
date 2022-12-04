@@ -57,7 +57,7 @@ $ npm install -g @abhagsain/ai-cli
 $ ai COMMAND
 running command...
 $ ai (--version)
-@abhagsain/ai-cli/1.1.3 darwin-x64 node-v14.18.3
+@abhagsain/ai-cli/1.2.0 darwin-x64 node-v14.18.3
 $ ai --help [COMMAND]
 USAGE
   $ ai COMMAND
@@ -71,6 +71,7 @@ USAGE
 * [`ai ask [question]`](#ai-ask-question)
 * [`ai auth`](#ai-auth)
 * [`ai help [COMMAND]`](#ai-help-command)
+* [`ai model`](#ai-model)
 
 ## `ai ask [question]`
 
@@ -90,7 +91,7 @@ EXAMPLES
   $ ai ask "Check running process on port 3000"
 ```
 
-_See code: [dist/commands/ask.ts](https://github.com/abhagsain/ai-cli/blob/v1.1.3/dist/commands/ask.ts)_
+_See code: [dist/commands/ask.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.0/dist/commands/ask.ts)_
 
 ## `ai auth`
 
@@ -107,7 +108,7 @@ EXAMPLES
   $ ai auth (Follow the prompt)
 ```
 
-_See code: [dist/commands/auth.ts](https://github.com/abhagsain/ai-cli/blob/v1.1.3/dist/commands/auth.ts)_
+_See code: [dist/commands/auth.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.0/dist/commands/auth.ts)_
 
 ## `ai help [COMMAND]`
 
@@ -128,4 +129,21 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.17/src/commands/help.ts)_
+
+## `ai model`
+
+Change model preference (default: text-davinci-003)
+
+```
+USAGE
+  $ ai model
+
+DESCRIPTION
+  Change model preference (default: text-davinci-003)
+
+EXAMPLES
+  $ ai model (Follow the prompt)
+```
+
+_See code: [dist/commands/model.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.0/dist/commands/model.ts)_
 <!-- commandsstop -->
