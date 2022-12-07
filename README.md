@@ -1,14 +1,21 @@
-# GPT3 Powered CLI
+<p align="center">
+<h1 align="center"> GPT3 Powered CLI </h1>
 
-Get answers for CLI commands from GPT3 right from your terminal
+<p align="center">
+ <a href="https://oclif.io"><img src="https://img.shields.io/badge/cli-oclif-brightgreen.svg" alt="Oclif"></a>
+ <a href="https://npmjs.org/package/@abhagsain/ai-cli"><img src="https://img.shields.io/npm/v/@abhagsain/ai-cli.svg" alt="npm"></a>
+ <a href="https://npmjs.org/package/@abhagsain/ai-cli"><img src="https://img.shields.io/npm/dw/@abhagsain/ai-cli.svg" alt="npm"></a>
+ <a href="https://news.ycombinator.com/item?id=33651326"><img src="https://img.shields.io/badge/%233-Hacker%20News%20%7C%20159-FF6600" alt="Hacker News"></a>
+
+</p>
+ 
+
+
 
 <!-- <img src="https://user-images.githubusercontent.com/36589645/202102237-6666f461-1aa8-496a-9438-de15cee1696e.gif" width="900" height="600"/> -->
 ![image](https://user-images.githubusercontent.com/36589645/202654014-c1884be3-76d5-4b64-81d1-e3f1169fcb46.png)
 
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/@abhagsain/ai-cli.svg)](https://npmjs.org/package/@abhagsain/ai-cli)
-[![Downloads/week](https://img.shields.io/npm/dw/@abhagsain/ai-cli.svg)](https://npmjs.org/package/@abhagsain/ai-cli)
 
 
 ### Installation
