@@ -49,7 +49,6 @@ The current prompt length is `~840` tokens and the pricing for [`text-davinci-00
 Auto generated documentation
 
 <!-- toc -->
-* [GPT3 Powered CLI](#gpt3-powered-cli)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
@@ -62,7 +61,7 @@ $ npm install -g @abhagsain/ai-cli
 $ ai COMMAND
 running command...
 $ ai (--version)
-@abhagsain/ai-cli/1.2.1 darwin-x64 node-v14.18.3
+@abhagsain/ai-cli/1.2.2 darwin-x64 node-v14.18.3
 $ ai --help [COMMAND]
 USAGE
   $ ai COMMAND
@@ -75,8 +74,10 @@ USAGE
 <!-- commands -->
 * [`ai ask [question]`](#ai-ask-question)
 * [`ai auth`](#ai-auth)
+* [`ai autocomplete [SHELL]`](#ai-autocomplete-shell)
 * [`ai help [COMMAND]`](#ai-help-command)
 * [`ai model`](#ai-model)
+* [`ai update [CHANNEL]`](#ai-update-channel)
 
 ## `ai ask [question]`
 
@@ -96,7 +97,7 @@ EXAMPLES
   $ ai ask "Check running process on port 3000"
 ```
 
-_See code: [dist/commands/ask.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.1/dist/commands/ask.ts)_
+_See code: [dist/commands/ask.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.2/dist/commands/ask.ts)_
 
 ## `ai auth`
 
@@ -113,7 +114,36 @@ EXAMPLES
   $ ai auth (Follow the prompt)
 ```
 
-_See code: [dist/commands/auth.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.1/dist/commands/auth.ts)_
+_See code: [dist/commands/auth.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.2/dist/commands/auth.ts)_
+
+## `ai autocomplete [SHELL]`
+
+display autocomplete installation instructions
+
+```
+USAGE
+  $ ai autocomplete [SHELL] [-r]
+
+ARGUMENTS
+  SHELL  shell type
+
+FLAGS
+  -r, --refresh-cache  Refresh cache (ignores displaying instructions)
+
+DESCRIPTION
+  display autocomplete installation instructions
+
+EXAMPLES
+  $ ai autocomplete
+
+  $ ai autocomplete bash
+
+  $ ai autocomplete zsh
+
+  $ ai autocomplete --refresh-cache
+```
+
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v1.3.6/src/commands/autocomplete/index.ts)_
 
 ## `ai help [COMMAND]`
 
@@ -150,5 +180,42 @@ EXAMPLES
   $ ai model (Follow the prompt)
 ```
 
-_See code: [dist/commands/model.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.1/dist/commands/model.ts)_
+_See code: [dist/commands/model.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.2/dist/commands/model.ts)_
+
+## `ai update [CHANNEL]`
+
+update the ai CLI
+
+```
+USAGE
+  $ ai update [CHANNEL] [-a] [-v <value> | -i] [--force]
+
+FLAGS
+  -a, --available        Install a specific version.
+  -i, --interactive      Interactively select version to install. This is ignored if a channel is provided.
+  -v, --version=<value>  Install a specific version.
+  --force                Force a re-download of the requested version.
+
+DESCRIPTION
+  update the ai CLI
+
+EXAMPLES
+  Update to the stable channel:
+
+    $ ai update stable
+
+  Update to a specific version:
+
+    $ ai update --version 1.0.0
+
+  Interactively select version:
+
+    $ ai update --interactive
+
+  See available versions:
+
+    $ ai update --available
+```
+
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v3.0.7/src/commands/update.ts)_
 <!-- commandsstop -->
