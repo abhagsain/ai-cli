@@ -45,6 +45,11 @@ Pricing
 
 The current prompt length is `~840` tokens and the pricing for [`text-davinci-002`](https://openai.com/api/pricing/) is `$0.02` for `1K` tokens which is ~`$0.017/command`. We'll see if we can improve the response as well as reduce the per-command-cost with fine-tuning.
 
+___
+
+Add autocomplete by running `ai autocomplete` and follow the instructions. It's super easy.
+<img src="https://user-images.githubusercontent.com/36589645/206248317-8568ffcb-bebc-43df-aa1e-acc394a86c23.gif" width="800">
+
 
 Auto generated documentation
 
