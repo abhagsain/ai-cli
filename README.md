@@ -6,7 +6,7 @@
  <a href="https://npmjs.org/package/@abhagsain/ai-cli"><img src="https://img.shields.io/npm/v/@abhagsain/ai-cli.svg" alt="npm"></a>
  <a href="https://npmjs.org/package/@abhagsain/ai-cli"><img src="https://img.shields.io/npm/dw/@abhagsain/ai-cli.svg" alt="npm"></a>
  <a href="https://news.ycombinator.com/item?id=33651326"><img src="https://img.shields.io/badge/%233-Hacker%20News%20%7C%20159-FF6600" alt="Hacker News"></a>
-
+ <a href="https://www.llmhub.com/abhagsain/ai-cli"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.llmhub.com%2Fshields%2Fstars%2Fabhagsain%2Fai-cli" alt="LLMHub"></a>
 </p>
  
 
@@ -20,10 +20,12 @@
 
 ### Installation
 
-You'd need to install it globally
+You'd need to install it globally, and then authenticate against [LLMHub](https://www.llmhub.com) (which is included with `ai-cli`).
 
 ```
 npm i @abhagsain/ai-cli -g
+# llmhub was globally installed as part of previous command.
+llmhub auth
 ```
 
 Usage
@@ -32,16 +34,9 @@ Usage
 $ ai ask "Check process running on port"
 ```
 
-You'd need to enter your own OpenAI API key
-Here's how you can get one
-
-1. Go to https://openai.com/api/login
-2. Create an account or log into your existing account
-3. Go to https://beta.openai.com/account/api-keys or
-   <img width="1904" alt="image" src="https://user-images.githubusercontent.com/36589645/202097820-dc6905e6-4514-413b-980f-169c35ffef9a.png">
-4. Run `ai auth`, enter your API KEY and you're good to go!
-
 Pricing
+
+Due to [LLMHub](https://www.llmhub.com), `ai-cli` is free-to-use. [LLMHub](https://www.llmhub.com) has a "fair usage limit" of ~250 commands per month. Beyond that, charges will be similar to that of the underlying provider:
 
 The current prompt length is `~840` tokens and the pricing for [`text-davinci-002`](https://openai.com/api/pricing/) is `$0.02` for `1K` tokens which is ~`$0.017/command`. We'll see if we can improve the response as well as reduce the per-command-cost with fine-tuning.
 
@@ -63,10 +58,11 @@ Auto generated documentation
 <!-- usage -->
 ```sh-session
 $ npm install -g @abhagsain/ai-cli
+$ llmhub auth
 $ ai COMMAND
 running command...
 $ ai (--version)
-@abhagsain/ai-cli/1.2.2 darwin-x64 node-v14.18.3
+@abhagsain/ai-cli/1.2.2 darwin-x64 node-v16.15.0
 $ ai --help [COMMAND]
 USAGE
   $ ai COMMAND
@@ -78,10 +74,8 @@ USAGE
 
 <!-- commands -->
 * [`ai ask [question]`](#ai-ask-question)
-* [`ai auth`](#ai-auth)
 * [`ai autocomplete [SHELL]`](#ai-autocomplete-shell)
 * [`ai help [COMMAND]`](#ai-help-command)
-* [`ai model`](#ai-model)
 * [`ai update [CHANNEL]`](#ai-update-channel)
 
 ## `ai ask [question]`
@@ -103,23 +97,6 @@ EXAMPLES
 ```
 
 _See code: [dist/commands/ask.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.2/dist/commands/ask.ts)_
-
-## `ai auth`
-
-Update existing or add new OpenAI API Key
-
-```
-USAGE
-  $ ai auth
-
-DESCRIPTION
-  Update existing or add new OpenAI API Key
-
-EXAMPLES
-  $ ai auth (Follow the prompt)
-```
-
-_See code: [dist/commands/auth.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.2/dist/commands/auth.ts)_
 
 ## `ai autocomplete [SHELL]`
 
@@ -169,23 +146,6 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.17/src/commands/help.ts)_
-
-## `ai model`
-
-Change model preference (default: text-davinci-003)
-
-```
-USAGE
-  $ ai model
-
-DESCRIPTION
-  Change model preference (default: text-davinci-003)
-
-EXAMPLES
-  $ ai model (Follow the prompt)
-```
-
-_See code: [dist/commands/model.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.2/dist/commands/model.ts)_
 
 ## `ai update [CHANNEL]`
 

@@ -2,11 +2,9 @@ import { CliUx, Command } from "@oclif/core";
 import chalk from "chalk";
 import * as inquirer from "inquirer";
 import {
-  getCurrentModel,
-  getDefaultCommandPrompt,
-  getOpenAIKey,
+  getDefaultCommandPromptHubLink,
 } from "../helpers/index";
-const { Configuration, OpenAIApi } = require("openai");
+const LLMHub = require("llmhub");
 
 export default class AI extends Command {
   static description = "Ask question to GPT3 from your terminal";
@@ -27,29 +25,14 @@ export default class AI extends Command {
 
   async getAnswersFromGPT3({
     question,
-    API_KEY,
   }: {
     question: string;
-    API_KEY: string;
   }): Promise<any> {
-    const configuration = new Configuration({
-      apiKey: API_KEY || process.env.OPENAI_API_KEY,
-    });
-    const openai = new OpenAIApi(configuration);
-    const prompt = `${getDefaultCommandPrompt() + question.trim() + "\nA - "}`;
-    const { name: model } = getCurrentModel(this.config.configDir);
-    const response = await openai.createCompletion({
-      model,
-      prompt,
-      temperature: 0.8,
-      max_tokens: 64,
-      top_p: 1,
-      frequency_penalty: 0.5,
-      presence_penalty: 0,
-      stop: ['"""'],
-    });
+    const llmhub = new LLMHub(getDefaultCommandPromptHubLink());
+    const input = `${question.trim() + "\nA - "}`;
+    const { output } = await llmhub.run({input});
     const code = /`(.*?)`/;
-    const value = response.data.choices[0].text.trim();
+    const value = output.trim();
     const match = value.match(code)?.length > 1 ? value.match(code)[1] : value;
     return match;
   }
@@ -81,21 +64,11 @@ export default class AI extends Command {
   }
 
   async run(): Promise<void> {
-    const API_KEY = await getOpenAIKey(this.config.configDir);
-    if (!API_KEY) {
-      this.log(
-        "You haven't set your OpenAI API key. Please login with",
-        chalk.bold.yellow("ai auth")
-      );
-      return;
-    }
-
     const { args } = await this.parse(AI);
     const { question } = args;
     CliUx.ux.action.start("");
     const answer = await this.getAnswersFromGPT3({
       question: question.trim(),
-      API_KEY,
     });
     CliUx.ux.action.stop("");
     if (answer.toLowerCase().startsWith("sorry")) {
