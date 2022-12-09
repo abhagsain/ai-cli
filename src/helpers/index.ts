@@ -1,12 +1,13 @@
 import fs from "fs-extra";
 import path from "path";
+import { IModel } from "../types";
 
-export const defaultModel = "text-davinci-003";
+export const defaultModel = {
+  name: "text-davinci-003",
+};
 
-export const models = [
-  {
-    name: defaultModel,
-  },
+export const models: IModel[] = [
+  defaultModel,
   { name: "text-curie-001" },
   { name: "text-ada-001" },
   { name: "text-babbage-001" },
@@ -44,7 +45,7 @@ export const getCurrentModel = (dataDir: string): typeof models[number] => {
   return model;
 };
 
-export const saveModelPreference = (dataDir: string, model: string): void => {
+export const saveModelPreference = (dataDir: string, model: IModel): void => {
   const config = getDataConfigFilePath(dataDir);
   fs.writeJsonSync(config, { model });
 };

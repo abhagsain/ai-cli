@@ -38,20 +38,25 @@ export default class AI extends Command {
     const openai = new OpenAIApi(configuration);
     const prompt = `${getDefaultCommandPrompt() + question.trim() + "\nA - "}`;
     const { name: model } = getCurrentModel(this.config.configDir);
-    const response = await openai.createCompletion({
-      model,
-      prompt,
-      temperature: 0.8,
-      max_tokens: 64,
-      top_p: 1,
-      frequency_penalty: 0.5,
-      presence_penalty: 0,
-      stop: ['"""'],
-    });
-    const code = /`(.*?)`/;
-    const value = response.data.choices[0].text.trim();
-    const match = value.match(code)?.length > 1 ? value.match(code)[1] : value;
-    return match;
+    try {
+      const response = await openai.createCompletion({
+        model: model,
+        prompt,
+        temperature: 0.8,
+        max_tokens: 64,
+        top_p: 1,
+        frequency_penalty: 0.5,
+        presence_penalty: 0,
+        stop: ['"""'],
+      });
+      const code = /`(.*?)`/;
+      const value = response.data.choices[0].text.trim();
+      const match =
+        value.match(code)?.length > 1 ? value.match(code)[1] : value;
+      return match;
+    } catch (error: any) {
+      throw new Error(JSON.stringify(error.response.data.error));
+    }
   }
 
   async showOptions(answer: string): Promise<void> {

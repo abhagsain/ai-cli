@@ -7,6 +7,7 @@ import {
   models,
   saveModelPreference,
 } from "../helpers/index";
+import { IModel } from "../types";
 
 export default class Model extends Command {
   static description = `Change model preference (default: ${defaultModel})`;
@@ -15,7 +16,7 @@ export default class Model extends Command {
 
   public async run(): Promise<void> {
     const currentModel = getCurrentModel(this.config.configDir);
-    const prompt = await inquirer.prompt<{ modelName: string }>([
+    const prompt = await inquirer.prompt<{ modelName: IModel }>([
       {
         name: "modelName",
         message: "Please select a model",
