@@ -7,6 +7,19 @@ import {
   getOpenAIKey,
 } from "../helpers/index";
 const { Configuration, OpenAIApi } = require("openai");
+import { exec } from 'child_process';
+
+function runShellCommand(command: string): Promise<string> {
+  return new Promise<string>((resolve, reject) => {
+    exec(command, (error, stdout, stderr) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(stdout.trim());
+      }
+    });
+  });
+}
 
 export default class AI extends Command {
   static description = "Ask question to GPT3 from your terminal";
@@ -60,7 +73,7 @@ export default class AI extends Command {
   }
 
   async showOptions(answer: string): Promise<void> {
-    const choices = ["Copy to clipboard", "Exit"];
+    const choices = ["Run the answer","Copy to clipboard", "Exit"];
 
     const prompt: any = await inquirer.prompt([
       {
@@ -77,6 +90,17 @@ export default class AI extends Command {
         const clipboardy = (await import("clipboardy")).default;
         clipboardy.writeSync(answer);
         break;
+      }
+      case "Run the answer": {
+	runShellCommand(answer)
+	  .then((output) => {
+	    console.log(`Command output:\n${output}`);
+	  })
+	  .catch((error) => {
+	    console.error(`Command failed with error:\n${error}`);
+	  });
+        break;
+
       }
 
       default: {
@@ -112,12 +136,6 @@ export default class AI extends Command {
         `\`${answer}\``
       )}\n`
     );
-
     await this.showOptions((answer || "").trim());
-    this.log(
-      `${chalk.red(
-        "Please don't run a command that you don't understand."
-      )} ${chalk.underline.red("Especially destructive commands")} `
-    );
   }
 }
