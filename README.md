@@ -50,6 +50,10 @@ ___
 Add autocomplete by running `ai autocomplete` and follow the instructions. It's super easy.
 <img src="https://user-images.githubusercontent.com/36589645/206248317-8568ffcb-bebc-43df-aa1e-acc394a86c23.gif" width="800">
 
+__
+
+### Liked this project? Checkout my other side project. [SlidesAI.io - AI Presentation Maker](https://slidesai.io/?ref=ai-cli)
+__
 
 Auto generated documentation
 
