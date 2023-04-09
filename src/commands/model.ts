@@ -10,7 +10,7 @@ import {
 import { IModel } from "../types";
 
 export default class Model extends Command {
-  static description = `Change model preference (default: ${defaultModel})`;
+  static description = `Change model preference (default: ${defaultModel.name})`;
 
   static examples = ["<%= config.bin %> <%= command.id %> (Follow the prompt)"];
 
