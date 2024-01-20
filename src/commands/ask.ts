@@ -41,7 +41,7 @@ export default class AI extends Command {
       const response = await openai.chat.completions.create({
         model: model,
         messages: [...messages, { role: "user", content: question }],
-        temperature: 0.4,
+        temperature: 0.8,
         max_tokens: 64,
         top_p: 1,
         frequency_penalty: 0.5,
