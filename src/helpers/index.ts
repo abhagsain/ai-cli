@@ -3,17 +3,10 @@ import path from "path";
 import { IModel } from "../types";
 
 export const defaultModel = {
-  name: "text-davinci-003",
+  name: "gpt-3.5-turbo-instruct",
 };
 
-export const models: IModel[] = [
-  defaultModel,
-  { name: "text-curie-001" },
-  { name: "text-ada-001" },
-  { name: "text-babbage-001" },
-  { name: "code-davinci-002", isLimitedBeta: true },
-  { name: "code-cushman-001", isLimitedBeta: true },
-];
+export const models: IModel[] = [defaultModel];
 
 export const getOpenAIKey = async (
   configDir: string
