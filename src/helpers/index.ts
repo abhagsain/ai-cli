@@ -6,7 +6,11 @@ export const defaultModel = {
   name: "gpt-3.5-turbo-instruct",
 };
 
-export const models: IModel[] = [defaultModel];
+export const models: IModel[] = [
+  defaultModel,
+  { name: "babbage-002" },
+  { name: "davinci-002" },
+];
 
 export const getOpenAIKey = async (
   configDir: string
