@@ -3,10 +3,10 @@ import chalk from "chalk";
 import * as inquirer from "inquirer";
 import {
   getCurrentModel,
-  getDefaultCommandPrompt,
+  getDefaultMessages,
   getOpenAIKey,
 } from "../helpers/index";
-const { Configuration, OpenAIApi } = require("openai");
+import OpenAI from "openai";
 
 export default class AI extends Command {
   static description = "Ask question to GPT3 from your terminal";
@@ -32,17 +32,16 @@ export default class AI extends Command {
     question: string;
     API_KEY: string;
   }): Promise<any> {
-    const configuration = new Configuration({
+    const openai = new OpenAI({
       apiKey: API_KEY || process.env.OPENAI_API_KEY,
     });
-    const openai = new OpenAIApi(configuration);
-    const prompt = `${getDefaultCommandPrompt() + question.trim() + "\nA - "}`;
+    const messages = getDefaultMessages();
     const { name: model } = getCurrentModel(this.config.configDir);
     try {
-      const response = await openai.createCompletion({
+      const response = await openai.chat.completions.create({
         model: model,
-        prompt,
-        temperature: 0.8,
+        messages: [...messages, { role: "user", content: question }],
+        temperature: 0.4,
         max_tokens: 64,
         top_p: 1,
         frequency_penalty: 0.5,
@@ -50,12 +49,23 @@ export default class AI extends Command {
         stop: ['"""'],
       });
       const code = /`(.*?)`/;
-      const value = response.data.choices[0].text.trim();
-      const match =
-        value.match(code)?.length > 1 ? value.match(code)[1] : value;
+      const value = response.choices[0].message.content?.trim() || "";
+      const matches = value.match(code) || [];
+      const match = matches.length > 1 ? matches[1] : value;
       return match;
     } catch (error: any) {
-      throw new Error(JSON.stringify(error.response.data.error));
+      // Error handling as suggested in openai v3->v4 migration guide
+      // https://github.com/openai/openai-node/discussions/217
+      if (error instanceof OpenAI.APIError) {
+        throw new Error(
+          JSON.stringify({
+            status: error.status,
+            message: error.message,
+            code: error.code,
+            type: error.type,
+          })
+        );
+      } else throw new Error(error.message);
     }
   }
 
