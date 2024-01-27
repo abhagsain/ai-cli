@@ -35,8 +35,17 @@ export const getCurrentModel = (dataDir: string): typeof models[number] => {
   if (!exists) {
     saveModelPreference(dataDir, defaultModel);
   }
-  const { model } = fs.readJsonSync(config);
-  return model;
+  const { model: savedModel } = fs.readJsonSync(config);
+
+  // To check if the saved model is in our defined list of models
+  const isModelValid = models.find((model) => model.name === savedModel.name);
+
+  if (!isModelValid) {
+    saveModelPreference(dataDir, defaultModel);
+    return defaultModel;
+  }
+
+  return savedModel;
 };
 
 export const saveModelPreference = (dataDir: string, model: IModel): void => {
