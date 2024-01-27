@@ -43,7 +43,7 @@ Here's how you can get one
 
 Pricing
 
-The current prompt length is `~840` tokens and the pricing for [`text-davinci-002`](https://openai.com/api/pricing/) is `$0.02` for `1K` tokens which is ~`$0.017/command`. We'll see if we can improve the response as well as reduce the per-command-cost with fine-tuning.
+The current prompt length is `~800` tokens and average response length is `~40` tokens. The pricing for [`gpt-3.5-turbo`](https://openai.com/api/pricing/) is `$0.001` per `1K` input tokens and `$0.002` per `1K` output tokens which is ~`$0.0009/command`. We'll see if we can improve the response as well as reduce the per-command-cost with fine-tuning.
 
 ___
 
@@ -176,14 +176,14 @@ _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.1
 
 ## `ai model`
 
-Change model preference (default: text-davinci-003)
+Change model preference (default: gpt-3.5-turbo)
 
 ```
 USAGE
   $ ai model
 
 DESCRIPTION
-  Change model preference (default: text-davinci-003)
+  Change model preference (default: gpt-3.5-turbo)
 
 EXAMPLES
   $ ai model (Follow the prompt)
