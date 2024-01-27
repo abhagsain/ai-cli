@@ -70,7 +70,7 @@ $ npm install -g @abhagsain/ai-cli
 $ ai COMMAND
 running command...
 $ ai (--version)
-@abhagsain/ai-cli/1.2.3 darwin-x64 node-v14.18.3
+@abhagsain/ai-cli/1.3.0 darwin-arm64 node-v18.0.0
 $ ai --help [COMMAND]
 USAGE
   $ ai COMMAND
@@ -106,7 +106,7 @@ EXAMPLES
   $ ai ask "Check running process on port 3000"
 ```
 
-_See code: [dist/commands/ask.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.3/dist/commands/ask.ts)_
+_See code: [dist/commands/ask.ts](https://github.com/abhagsain/ai-cli/blob/v1.3.0/dist/commands/ask.ts)_
 
 ## `ai auth`
 
@@ -123,7 +123,7 @@ EXAMPLES
   $ ai auth (Follow the prompt)
 ```
 
-_See code: [dist/commands/auth.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.3/dist/commands/auth.ts)_
+_See code: [dist/commands/auth.ts](https://github.com/abhagsain/ai-cli/blob/v1.3.0/dist/commands/auth.ts)_
 
 ## `ai autocomplete [SHELL]`
 
@@ -189,7 +189,7 @@ EXAMPLES
   $ ai model (Follow the prompt)
 ```
 
-_See code: [dist/commands/model.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.3/dist/commands/model.ts)_
+_See code: [dist/commands/model.ts](https://github.com/abhagsain/ai-cli/blob/v1.3.0/dist/commands/model.ts)_
 
 ## `ai update [CHANNEL]`
 
