@@ -44,7 +44,7 @@
     "eslint-config-oclif-typescript": "^1.0.3",
     "mocha": "^9",
     "oclif": "^3",
-    "shx": "^0.3.3",
+    "shx": "^0.3.4",
     "ts-node": "^10.9.1",
     "tslib": "^2.3.1",
     "typescript": "^4.8.4"
